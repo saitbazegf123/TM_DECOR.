@@ -286,19 +286,19 @@ target="_blank">
         <h2>درخواست مشاوره</h2>
     </div>
 
-    <form>
+    <form id="contactForm">
 
-        <input type="text" placeholder="نام و نام خانوادگی">
+<input type="text" id="name" placeholder="نام و نام خانوادگی" required>
 
-        <input type="tel" placeholder="شماره تماس">
+<input type="tel" id="phone" placeholder="شماره تماس" required>
 
-        <textarea placeholder="پیام شما"></textarea>
+<textarea id="message" placeholder="پیام شما"></textarea>
 
-        <button type="submit">
-            ارسال درخواست
-        </button>
+<button type="button" onclick="sendWhatsApp()">
+ارسال درخواست
+</button>
 
-    </form>
+</form>
 
 </section>
 
@@ -403,7 +403,33 @@ target="_blank">
     </div>
 
 </footer>
+<script>
 
+function sendWhatsApp(){
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let message=document.getElementById("message").value;
+
+let text=
+سلام
+یک درخواست مشاوره جدید دارم.
+
+👤 نام: ${name}
+
+📞 شماره: ${phone}
+
+📝 توضیحات:
+${message};
+
+window.open(
+"https://wa.me/989014144797?text="+encodeURIComponent(text),
+"_blank"
+);
+
+}
+
+</script>
 </body>
 
 </html>
