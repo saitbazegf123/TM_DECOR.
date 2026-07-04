@@ -412,7 +412,7 @@ let phone=document.getElementById("phone").value;
 let message=document.getElementById("message").value;
 
 let text=
-سلام
+`سلام
 یک درخواست مشاوره جدید دارم.
 
 👤 نام: ${name}
@@ -420,7 +420,7 @@ let text=
 📞 شماره: ${phone}
 
 📝 توضیحات:
-${message};
+${message}`;
 
 window.open(
 "https://wa.me/989014144797?text="+encodeURIComponent(text),
